@@ -47,19 +47,10 @@ func Two(part uint64) {
 						continue in
 					}
 					groups := length / x
-					vals := make([][]uint64, groups)
-					for y := uint64(0); y < groups; y += 1 {
-						vals[y] = make([]uint64, x)
-					}
 
-					for y := uint64(0); y < groups; y += 1 {
-						for z := uint64(0); z < x; z += 1 {
-							vals[y][z] = digits[y * x + z]
-						}
-					}
 					for y := uint64(0); y < groups - 1; y += 1 {
 						for z := uint64(0); z < x; z += 1 {
-							if vals[y][z] != vals[y+1][z] {
+							if digits[y * x + z] != digits[(y + 1) * x + z] {
 								continue in
 							}
 						}
