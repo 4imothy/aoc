@@ -31,7 +31,7 @@ func main() {
 	}
 	fmt.Printf("day: %v | part: %v: ", day, part)
 
-	solvers := []func(uint64){One, Two}
+	solvers := []func(uint64){One, Two, Three}
 	solvers[day - 1](part)
 }
 
